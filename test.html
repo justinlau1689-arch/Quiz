@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App | Test page</title>
+</head>
+<body>
+    {% if question %}
+        <h1>{{ question }}</h1>
+    {% endif %}
+    <form action ='test' method="post">
+        <input type="hidden" name="q_id" value="{{ quest_id }}">
+        <div>
+            {% for answer in answers_list %}
+                <div>
+                    <input type ="radio" name="ans_text" id="{{answer}}">
+                </div>
+            {% endfor %}
+            <div>
+                <p>
+                    <input type="submit" value="Answer">
+                </p>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>
