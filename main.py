@@ -28,7 +28,7 @@ def index():
     else:
         quest_id = request.form.get('quiz')
         start_quiz(quest_id)
-        return redirect(url_for ('test'))
+        return redirect(url_for('test'))
     
     #return '<a href="/test">Start The Quiz!!!</a>'
 
@@ -46,12 +46,12 @@ def question_form(question):
         'test.html',
         question=question[1],
         quest_id=question[0],
-        answer_list=answer_list
+        answer_list= answer_list
     )
 
 def save_answer():
     answer = request.form.get('ans_text')
-    quest_id = request.form.get9('q_id')
+    quest_id = request.form.get('q_id')
 
     # this question has already been asked
     session['last_question'] = quest_id
@@ -71,7 +71,7 @@ def test():
         if request.method == 'POST':
             save_answer()
             # save the answer
-        next_question = get_question_after(session['last_question', session['quiz']])
+        next_question = get_question_after(session['last_question'],session['quiz'])
         if next_question is None or len(next_question) == 0:
             # the quiz is over
             return redirect(url_for('result'))
@@ -84,10 +84,12 @@ def test():
     # else:
     #     session['last_question'] = result[0]
     #     return f"<h1> {session['quiz']} <br> {str(result)} </h1>"
-        
 
 def result():
-    return 'This is result page'
+    html = render_template('result.html', right=session['answers'], total=session['total'])
+    end_quiz()
+    return html
+
 
 # Routes
 folder = os.getcwd()

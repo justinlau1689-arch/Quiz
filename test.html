@@ -12,9 +12,9 @@
     <form action ='test' method="post">
         <input type="hidden" name="q_id" value="{{ quest_id }}">
         <div>
-            {% for answer in answers_list %}
+            {% for answer in answer_list %}
                 <div>
-                    <input type ="radio" name="ans_text" id="{{answer}}">
+                    <input type ="radio" name="ans_text" id="{{answer}}">{{ answer }}
                 </div>
             {% endfor %}
             <div>

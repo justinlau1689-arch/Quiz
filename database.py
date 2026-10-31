@@ -126,10 +126,10 @@ def get_quizes():
 
 def check_answer(q_id, ans_text):
     query = '''
-        SELECT question.answer
-        FROM quiz_content, question
+        SELECT questions.answer
+        FROM quiz_content, questions
         WHERE quiz_content.id = ?
-        AND quiz_content.question_id = question.id
+        AND quiz_content.question_id = questions.id
     '''
     open()
     cursor.execute(query, str(q_id))
