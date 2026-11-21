@@ -1,0 +1,33 @@
+h2 {
+    color: purple;
+}
+
+.quiz-btn{
+    background-color: blue;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+}
+
+.quiz-btn:hover{
+    background-color: blue;
+}
+
+.answer-btn{
+    background-color: blue;
+    color: yellow;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+}
+
+h1 {
+    color: Purple;
+}
+
+a {
+    border: darkgoldenrod;
+    padding: 12px;
+    border-radius: 12px;
+}

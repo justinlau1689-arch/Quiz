@@ -1,0 +1,14 @@
+1. Visit the homepage 127.0.0.0:5000
+  What actually happen?
+  - I send HTTP Request = GET to Backend
+  - Backend (Python) check.....
+    - It confirmed, method is GET
+    - What python will do if it GET?
+      - run start_quiz(-1) function
+        - start_quiz() is about session. 
+        - session is just temporal memory
+        - so basically you creating temporal memory without any data (-1)
+      - return quiz_form()
+        - what quiz_form() do?
+          - run get_quizes() function, which take quiz_list from database
+          - it renders on 'start.html'
